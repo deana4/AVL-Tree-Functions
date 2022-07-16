@@ -2,12 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Do not change this. You can use but do not touch.
 int _max( int x, int y ){
 	return (x < y) ? y : x;
 }
 
-// Do not change this. You can use but do not touch.
 int _abs( int x ){
 	return (x < 0) ? -x : x;
 }
@@ -203,9 +201,6 @@ void delete_avl_tree( AVLNodePtr root ){
 	delete_avl_tree(root->child[RIGHT]); // go down left to minimal val;
 
 	free(root); //if we got into leaf we know we can delete it.
-	// if (root->child[LEFT] == NULL && root->child[RIGHT] == NULL){ //maybe delete
-	// 	return;
-	// }
 }
 
 //L Rotate;
@@ -289,7 +284,6 @@ void swap_nodes(AVLNodePtr root, AVLNodePtr succ_x){
 	succ_x->height = tmp;
 }
 
-//check if needed;
 AVLNodePtr fixer(AVLNodePtr root) {
 	root->height = 1 + _max(height_of_avl(root->child[LEFT]), height_of_avl(root->child[RIGHT])); //height of node is max height between his childs.
 	if (_abs(BF_of_avl(root)) <= 1) {
